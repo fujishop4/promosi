@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADIJAYA STORE VPN 2025</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #6610f2;
+      --success-color: #25d366;
+      --dark-color: #212529;
+      --light-color: #f8f9fa;
+      --gradient-1: linear-gradient(135deg, #007bff, #6610f2);
+      --gradient-2: linear-gradient(135deg, #6610f2, #e83e8c);
+      --gradient-3: linear-gradient(135deg, #e83e8c, #fd7e14);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background 0.3s, color 0.3s;
+      overflow-x: hidden;
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--secondary-color);
+    }
+
+    /* Loading Screen */
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading-screen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .vpn-loader {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: var(--gradient-1);
+      position: relative;
+      animation: pulse 2s infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .vpn-loader::before {
+      content: '';
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      border-radius: 50%;
+      background: white;
+    }
+
+    .vpn-loader i {
+      font-size: 40px;
+      color: var(--primary-color);
+      z-index: 1;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+      }
+    }
+
+    /* Notification Popup */
+    .notification-popup {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      max-width: 350px;
+      transform: translateX(400px);
+      transition: transform 0.5s ease;
+      z-index: 1000;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .notification-popup.show {
+      transform: translateX(0);
+    }
+
+    .notification-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(0, 123, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      color: var(--primary-color);
+    }
+
+    .notification-content {
+      flex-grow: 1;
+    }
+
+    .notification-title {
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .notification-message {
+      font-size: 14px;
+      color: #6c757d;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      z-index: 1000;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand i {
+      margin-right: 8px;
+      color: var(--primary-color);
+    }
+
+    .nav-link {
+      font-weight: 500;
+      margin: 0 10px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-1);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--gradient-1);
+      color: white;
+      padding: 5rem 1rem;
+      text-align: center;
+      border-radius: 0 0 50px 50px;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+      animation: rotate 30s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid rgba(255, 255, 255, 0.5);
+      margin-bottom: 1.5rem;
+      background: white;
+      box-shadow: var(--shadow);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn {
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-btn-primary {
+      background: white;
+      color: var(--primary-color);
+    }
+
+    .hero-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid white;
+    }
+
+    .hero-btn-secondary:hover {
+      background: white;
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: var(--gradient-1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: #6c757d;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Cards */
+    .card {
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      border: none;
+      overflow: hidden;
+      transition: var(--transition);
+      height: 100%;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--gradient-1);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--dark-color);
+    }
+
+    .card-text {
+      margin-bottom: 1.5rem;
+      color: #6c757d;
+      font-size: 0.95rem;
+    }
+
+    .price-tag {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    /* Buttons */
+    .btn {
+      border-radius: 50px;
+      padding: 10px 25px;
+      font-weight: 600;
+      transition: var(--transition);
+      margin: 5px;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary {
+      background: var(--gradient-1);
+      border: none;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    .btn-success {
+      background: var(--success-color);
+      border: none;
+      color: white;
+    }
+
+    .btn-success:hover {
+      background: #1ebe5d;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(37, 227, 102, 0.3);
+    }
+
+    .btn-secondary {
+      background: #6c757d;
+      border: none;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: #5a6268;
+      transform: translateY(-3px);
+    }
+
+    /* Product Cards - Compact Design */
+    .product-card {
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      border: none;
+      overflow: hidden;
+      transition: var(--transition);
+      height: 100%;
+      position: relative;
+      background: white;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--gradient-1);
+    }
+
+    .product-card-body {
+      padding: 1.2rem;
+    }
+
+    .product-card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: var(--dark-color);
+      line-height: 1.3;
+    }
+
+    .product-card-text {
+      margin-bottom: 1rem;
+      color: #6c757d;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .product-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .product-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .product-buttons .btn {
+      flex: 1;
+      padding: 8px 15px;
+      font-size: 0.85rem;
+    }
+
+    /* Server Cards */
+    .server-card {
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      border: none;
+      overflow: hidden;
+      transition: var(--transition);
+      margin-bottom: 1.5rem;
+    }
+
+    .server-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .server-card-header {
+      background: var(--gradient-1);
+      color: white;
+      padding: 1rem 1.5rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .server-card-header i {
+      margin-right: 10px;
+    }
+
+    .server-card-body {
+      padding: 1.5rem;
+    }
+
+    .server-options {
+      margin-bottom: 1.5rem;
+    }
+
+    .server-option {
+      margin-bottom: 1rem;
+    }
+
+    .server-option-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--dark-color);
+    }
+
+    .server-option-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .server-option-btn {
+      padding: 8px 15px;
+      border-radius: 20px;
+      background: #f8f9fa;
+      border: 2px solid #e9ecef;
+      color: var(--dark-color);
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .server-option-btn:hover {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .server-option-btn.active {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .server-prices {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    .server-price-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .server-price-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .server-price-name {
+      font-weight: 600;
+    }
+
+    .server-price-value {
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    /* Features */
+    .features {
+      background: var(--light-color);
+      padding: 4rem 0;
+      margin-top: 4rem;
+      border-radius: 50px 50px 0 0;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      height: 100%;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--gradient-1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      color: white;
+      font-size: 1.8rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--dark-color);
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+      background: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 5rem;
+      color: rgba(0, 123, 255, 0.1);
+      font-family: serif;
+    }
+
+    .testimonial-content {
+      margin-bottom: 1rem;
+      font-style: italic;
+      color: #6c757d;
+      font-size: 0.95rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .testimonial-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--gradient-1);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-right: 15px;
+    }
+
+    .testimonial-info h4 {
+      margin: 0;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .testimonial-info p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #6c757d;
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: white;
+      border-radius: 15px;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-question {
+      padding: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .faq-question:hover {
+      background: rgba(0, 123, 255, 0.05);
+    }
+
+    .faq-question i {
+      transition: var(--transition);
+    }
+
+    .faq-answer {
+      padding: 0 1.2rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      font-size: 0.95rem;
+      color: #6c757d;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 1.2rem 1.2rem;
+      max-height: 500px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark-color);
+      color: white;
+      padding: 3rem 0 1rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-column h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--gradient-1);
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+      color: #adb5bd;
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+
+    .footer-column ul li a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--gradient-1);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #adb5bd;
+      font-size: 0.9rem;
+    }
+
+    /* Floating WhatsApp Button */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--success-color);
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 5px 15px rgba(37, 227, 102, 0.4);
+      z-index: 999;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(37, 227, 102, 0.6);
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background: var(--gradient-1);
+      color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+      z-index: 999;
+      text-decoration: none;
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+    }
+
+    /* Dark Mode */
+    [data-bs-theme="dark"] body {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    [data-bs-theme="dark"] .navbar {
+      background: rgba(30, 30, 30, 0.95);
+    }
+
+    [data-bs-theme="dark"] .card,
+    [data-bs-theme="dark"] .product-card,
+    [data-bs-theme="dark"] .server-card,
+    [data-bs-theme="dark"] .testimonial-card,
+    [data-bs-theme="dark"] .faq-item {
+      background: #1e1e1e;
+      color: #e0e0e0;
+    }
+
+    [data-bs-theme="dark"] .features {
+      background: #1a1a1a;
+    }
+
+    [data-bs-theme="dark"] .section-header p {
+      color: #bdbdbd;
+    }
+
+    [data-bs-theme="dark"] .card-text,
+    [data-bs-theme="dark"] .product-card-text,
+    [data-bs-theme="dark"] .testimonial-content {
+      color: #bdbdbd;
+    }
+
+    [data-bs-theme="dark"] .server-option-btn {
+      background: #2a2a2a;
+      border-color: #3a3a3a;
+      color: #e0e0e0;
+    }
+
+    [data-bs-theme="dark"] .server-prices {
+      background: #2a2a2a;
+    }
+
+    [data-bs-theme="dark"] .server-price-item {
+      border-color: #3a3a3a;
+    }
+
+    [data-bs-theme="dark"] .footer-column ul li a {
+      color: #bdbdbd;
+    }
+
+    [data-bs-theme="dark"] .footer-column ul li a:hover {
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+      
+      .section-header h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 1rem;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .hero-btn {
+        width: 80%;
+      }
+      
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+      
+      .floating-wa {
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+      }
+      
+      .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+      }
+      
+      .notification-popup {
+        max-width: 300px;
+        right: 10px;
+        bottom: 80px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .section-header h2 {
+        font-size: 1.5rem;
+      }
+      
+      .card-body,
+      .product-card-body,
+      .server-card-body {
+        padding: 1rem;
+      }
+      
+      .btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+      }
+      
+      .product-buttons {
+        flex-direction: column;
+      }
+      
+      .server-option-buttons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="vpn-loader">
+      <i class="fas fa-shield-alt"></i>
+    </div>
+    <h3 class="mt-3">Memuat ADIJAYA VPN...</h3>
+  </div>
+
+  <!-- Notification Popup -->
+  <div class="notification-popup" id="notificationPopup">
+    <div class="notification-icon">
+      <i class="fas fa-shopping-cart"></i>
+    </div>
+    <div class="notification-content">
+      <div class="notification-title">Pembelian Berhasil</div>
+      <div class="notification-message" id="notificationMessage">Seseorang baru saja membeli paket!</div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-shield-alt"></i>
+        ADIJAYA VPN
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#kuota">Kuota VPN</a></li>
+          <li class="nav-item"><a class="nav-link" href="#konfig">Konfig</a></li>
+          <li class="nav-item"><a class="nav-link" href="#server">Server</a></li>
+          <li class="nav-item"><a class="nav-link" href="#aktif">Masa Aktif</a></li>
+          <li class="nav-item"><a class="nav-link" href="#unli">Unli Bizz</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        </ul>
+        <button id="toggleTheme" class="btn btn-outline-light ms-3">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+      <img src="logo.png" alt="ADIJAYA VPN Logo">
+      <h1>ADIJAYA STORE VPN 2025</h1>
+      <p>🔥 Ready Kuota & Konfig VPN Termurah!</p>
+      <div class="hero-buttons">
+        <a href="#kuota" class="hero-btn hero-btn-primary">Lihat Paket</a>
+        <a href="https://wa.me/6281214726068" class="hero-btn hero-btn-secondary">Chat Admin</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Kuota -->
+    <section id="kuota">
+      <div class="section-header">
+        <h2>📦 Kuota VPN</h2>
+        <p>Pilih paket kuota VPN yang sesuai dengan kebutuhan Anda</p>
+      </div>
+
+    <!-- Unli Bizz -->
+    <section id="unli" class="mt-5">
+      <div class="section-header">
+        <h2>🔰 XL Unli Bizz Lite</h2>
+        <p>Paket unlimited dengan harga terjangkau dan bonus masa aktif kartu 1 tahun</p>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <p class="card-text">
+                <i class="fas fa-star text-warning"></i> (BIZZ VERSI LITE ⚡)<br>
+                <i class="fas fa-gift text-success"></i> BONUS masa aktif kartu 1 tahun<br>
+                <i class="fas fa-check-circle text-primary"></i> Paket Inject / VPN<br>
+                <i class="fas fa-check-circle text-primary"></i> Fup Unlimited<br>
+                <i class="fas fa-check-circle text-primary"></i> Sudah Termasuk Config
+              </p>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <div class="price-tag">📦Harga Paket</div>
+                  <div class="h4">Rp45.000</div>
+                </div>
+                <div class="col-md-6">
+                  <div class="price-tag">✅ Harga Paket + Config</div>
+                  <div class="h4">Rp50.000</div>
+                </div>
+              </div>
+                <i class="fas fa-globe-americas text-success"></i> Support all TKP & All APK
+              </p>
+              <button class="btn btn-secondary w-100" data-bs-toggle="collapse" data-bs-target="#desc4">
+                <i class="fas fa-info-circle"></i> Deskripsi Produk
+              </button>
+              <div id="desc4" class="collapse mt-2">
+                <ul>
+                  <li>Detail paket :</li>
+                  <li>Kuota utama : 6GB</li>
+                  <li>SMS & TLP : Unlimited</li>
+                  <li>wa & line : Unlimited</li>
+                  <li>Masa aktif : 30 Hari</li>
+                  
+                  <li>Fup biz 300GB+</li>
+                  <li>Disarankan gunakan nomor non-pribadi</li>
+                  <li>Unlimited unofficial (tidak ada garansi)</li>
+                  <li>pembeli berhak mendapatkan bonus masa aktif kartu 1 tahun jika di nomor yang diisi kuota bizz lite terdapat pulsa minimal Rp.1</li>
+                  <li>Bonus hangus jika pulsa Rp.0</li>
+                  <li>tidak menerima komplain / proses ulang terkait bonus masa aktif</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4 text-center">
+              <div class="vpn-badge">
+                <i class="fas fa-crown text-warning" style="font-size: 3rem;"></i>
+                <h4 class="mt-2">PAKET TERBAIK</h4>
+                <div class="badge bg-success p-2 mt-2">POPULER</div>
+              </div>
+            </div>
+          </div>
+          <div class="d-grid gap-2 mt-3">
+            <a href="https://wa.me/6281214726068" class="btn btn-primary">
+              <i class="fas fa-comments"></i> Chat Admin
+            </a>
+            <a href="https://wa.me/6281214726068?text=Halo%20Admin,%20saya%20ingin%20beli%20XL%20Unli%20Bizz%20Lite%20+🎁Bonus%20masa%20aktif%20kartu%201tahun" class="btn btn-success">
+              <i class="fas fa-shopping-cart"></i> Order Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="product-card">
+            <div class="product-card-body">
+              <h4 class="product-card-title">✅ BIZZ STARTER | BIZ TAYO</h4>
+              <div class="product-price">💰Kuota Rp 60.000</div>
+              <div class="product-price">💰Kuota + konfig Rp 70.000</div>
+              <p class="product-card-text">
+                <i class="fas fa-check-circle text-success"></i> 🎁Bonus masa aktif kartu 1 tahub<br>
+                <i class="fas fa-check-circle text-success"></i> Support semua daerah<br>
+                <i class="fas fa-check-circle text-success"></i> Support semua <b>Aplikasi</b>
+              </p>
+              <button class="btn btn-secondary w-100" data-bs-toggle="collapse" data-bs-target="#desc1">
+                <i class="fas fa-info-circle"></i> Deskripsi Produk
+              </button>
+              <div id="desc4" class="collapse mt-2">
+                <ul>
+                  <li>Detail paket :</li>
+                  <li>Kuota utama : 10GB</li>
+                  <li>Kuota game : 1GB</li>
+                  <li>Kuota Youtube : 1GB</li>
+                  <li>SMS & TLP : Unlimited</li>
+                  <li>wa & line : Unlimited</li>
+                  <li>Masa aktif : 30 Hari</li>
+                  
+                  <li>Fup 600GB+</li>
+                  <li>Disarankan gunakan nomor non-pribadi</li>
+                  <li>Unlimited unofficial (tidak ada garansi)</li>
+                  <li>pembeli berhak mendapatkan bonus masa aktif kartu 1 tahun jika di nomor yang diisi kuota bizz lite terdapat pulsa minimal Rp.1</li>
+                  <li>Bonus hangus jika pulsa Rp.0</li>
+                  <li>tidak menerima komplain / proses ulang terkait bonus masa aktif</li>
+                </ul>
+              </div>
+              <div class="product-buttons">
+                <a href="https://wa.me/6281214726068" class="btn btn-primary">
+                  <i class="fas fa-comments"></i> Chat Admin
+                </a>
+                <a href="https://wa.me/6281214726068?text=Halo%20Admin,%20saya%20ingin%20beli%20XL%20Unli%20Bizz%20Starter%20+🎁Bonus%20masa%20aktif%20kartu%201tahun" class="btn btn-success">
+                  <i class="fas fa-shopping-cart"></i> Order
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="product-card">
+            <div class="product-card-body">
+              <h4 class="product-card-title">✅ XL Unlimited Turbo Tiktok (UTT)</h4>
+              <div class="product-price">💰 Kuota + konfig Rp 50.000</div>
+              <p class="product-card-text">
+                <i class="fas fa-check-circle text-success"></i> 🎁Bonus masa aktif kartu 1 tahun<br>
+                <i class="fas fa-check-circle text-success"></i> Support semua aplikasi<br>
+                <i class="fas fa-check-circle text-success"></i> Support semua daerah
+              </p>
+              <button class="btn btn-secondary w-100" data-bs-toggle="collapse" data-bs-target="#desc2">
+                <i class="fas fa-info-circle"></i> Deskripsi
+              </button>
+              <div id="desc2" class="collapse mt-2">
+                <ul>
+                  <li>Tidak semua nomor bisa, minimal umur kartu 6bulan+</li>
+                  <li>kuota tiktok unlimited</li>
+                  <li>Fup 200GB+</li>
+                  <li>Wajib pake konfig</li>
+                  <li>Jika proses pembelian paket ini gagal maka tidak ada refund Dana, Dan otomatis admin alihkan ke biz lite</li>
+                </ul>
+              </div>
+              <div class="product-buttons">
+                <a href="https://wa.me/6281214726068" class="btn btn-primary">
+                  <i class="fas fa-comments"></i> Chat Admin
+                </a>
+                <a href="https://wa.me/6281214726068?text=Halo%20Admin,%20saya%20ingin%20beli%20XL%20Unli%20Turbo%20Tiktok%20+🎁Bonus%20masa%20aktif%20kartu%201tahun%20Jika%20proses%20Dor%20gagal%20maka%20ganti%20dengan%20paket%20Biz%20Lite%20+%20konfig%20" class="btn btn-success">
+                  <i class="fas fa-shopping-cart"></i> Order
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="product-card">
+            <div class="product-card-body">
+              <h4 class="product-card-title">✅ XL Edukasi 15GB | 7 Hari</h4>
+              <div class="product-price">💰 Rp 12.000</div>
+              <p class="product-card-text">
+                <i class="fas fa-check-circle text-success"></i> Free Konfig 7day<br>
+                <i class="fas fa-check-circle text-success"></i> Support semua daerah<br>
+                <i class="fas fa-check-circle text-success"></i> Rekomendasi aplikasi: <b>HTTP Custom</b>
+              </p>
+              <button class="btn btn-secondary w-100" data-bs-toggle="collapse" data-bs-target="#desc1">
+                <i class="fas fa-info-circle"></i> Deskripsi
+              </button>
+              <div id="desc1" class="collapse mt-2">
+                <ul>
+                  <li>Kuota resmi dari XL</li>
+                  <li>Tidak unlimited</li>
+                  <li>15GB untuk 1 minggu</li>
+                  <li>Jika habis sebelum 1 minggu, beli kuota lagi</li>
+                </ul>
+              </div>
+              <div class="product-buttons">
+                <a href="https://wa.me/6281214726068" class="btn btn-primary">
+                  <i class="fas fa-comments"></i> Chat Admin
+                </a>
+                <a href="https://wa.me/6281214726068?text=Halo%20Admin,%20saya%20ingin%20beli%20XL%20Edukasi%2015GB%20%7C%207%20Hari" class="btn btn-success">
+                  <i class="fas fa-shopping-cart"></i> Order
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="product-card">
+            <div class="product-card-body">
+              <h4 class="product-card-title">✅ XL Video Conference 15GB | 7 Hari</h4>
+              <div class="product-price">💰 Rp 14.000</div>
+              <p class="product-card-text">
+                <i class="fas fa-check-circle text-success"></i> Free Konfig 7day<br>
+                <i class="fas fa-check-circle text-success"></i> Support semua aplikasi<br>
+                <i class="fas fa-check-circle text-success"></i> Support semua daerah
+              </p>
+              <button class="btn btn-secondary w-100" data-bs-toggle="collapse" data-bs-target="#desc2">
+                <i class="fas fa-info-circle"></i> Deskripsi
+              </button>
+              <div id="desc2" class="collapse mt-2">
+                <ul>
+                  <li>Kuota resmi dari XL</li>
+                  <li>Tidak unlimited</li>
+                  <li>15GB untuk 1 minggu</li>
+                  <li>Jika habis sebelum 1 minggu, beli kuota lagi</li>
+                </ul>
+              </div>
+              <div class="product-buttons">
+                <a href="https://wa.me/6281214726068" class="btn btn-primary">
+                  <i class="fas fa-comments"></i> Chat Admin
+                </a>
+                <a href="https://wa.me/6281214726068?text=Halo%20Admin,%20saya%20ingin%20beli%20XL%20Video%20Conference%2015GB%20%7C%207%20Hari" class="btn btn-success">
+                  <i class="fas fa-shopping-cart"></i> Order
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Konfig -->
+    <section id="konfig" class="mt-5">
+      <div class="section-header">
+        <h2>⚡ Konfig & Inject</h2>
+        <p>Dapatkan konfigurasi VPN untuk kebutuhan internet Anda</p>
+      </div>
+
+        <div class="col-md-6">
+          <div class="product-card">
+            <div class="product-card-body">
+              <h4 class="product-card-title">⚡ Konfig yang Masih Bisa ⚡</h4>
+              <p class="product-card-text">
+                <i class="fas fa-circle text-primary"></i>  XL EDUKASI | ALL TKP<br>
+                <i class="fas fa-circle text-danger"></i>  AXIS EDUKASI | ALL TKP<br>
+                <i class="fas fa-circle text-warning"></i>  IM3 APPS FUN | ALL TKP<br>
+                <i class="fas fa-circle text-primary"></i>  XL BIZZ | ALL TKP<br>
+                <i class="fas fa-circle text-primary"></i>  XL TURBO TIKTOK | ALL TKP<br>
+                <i class="fas fa-circle text-primary"></i>  XL TURBO Double YT | ALL TKP<br>
+                <i class="fas fa-circle text-primary"></i>  XL CONFERENCE | ALL TKP<br>
+                <i class="fas fa-circle text-danger"></i>  TSEL ILMUPEDIA | JATENG & JATIM
+              </p>
+              <button class="btn btn-secondary w-100" data-bs-toggle="collapse" data-bs-target="#desc3">
+                <i class="fas fa-info-circle"></i> Deskripsi
+              </button>
+              <div id="desc3" class="collapse mt-2">
+                <ul>
+                  <li>ALL TKP: Semua daerah bisa pakai</li>
+                  <li>Ilmupedia hanya support Jateng & Jatim</li>
+                </ul>
+              </div>
+              <div class="product-buttons">
+                <a href="https://wa.me/6281214726068" class="btn btn-primary">
+                  <i class="fas fa-comments"></i> Chat Admin
+                </a>
+                <a href="https://wa.me/6281214726068?text=Halo%20Admin,%20saya%20ingin%20beli%20Konfig%20yang%20masih%20bisa" class="btn btn-success">
+                  <i class="fas fa-shopping-cart"></i> Order
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Server -->
+    <section id="server" class="mt-5">
+      <div class="section-header">
+        <h2>🌐 Server Konfig</h2>
+        <p>Pilih server konfig sesuai kebutuhan Anda</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="server-card">
+            <div class="server-card-header">
+              <i class="fas fa-flag"></i> Server Indonesia
+            </div>
+            <div class="server-card-body">
+              <div class="server-options">
+                <div class="server-option">
+                  <div class="server-option-title">Pilih Jenis Server:</div>
+                  <div class="server-option-buttons">
+                    <div class="server-option-btn" data-server="indonesia" data-type="ssh">SSH</div>
+                    <div class="server-option-btn" data-server="indonesia" data-type="vmess">Vmess</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="server-prices" id="indonesia-prices" style="display: none;">
+                <div class="server-price-item">
+                  <div class="server-price-name">SSH 1 IP</div>
+                  <div class="server-price-value">Rp 10.000/bulan</div>
+                </div>
+                <div class="server-price-item">
+                  <div class="server-price-name">SSH 2 IP</div>
+                  <div class="server-price-value">Rp 12.000/bulan</div>
+                </div>
+                <div class="server-price-item">
+                  <div class="server-price-name">Vmess 1 IP</div>
+                  <div class="server-price-value">Rp 12.000/bulan</div>
+                </div>
+                <div class="server-price-item">
+                  <div class="server-price-name">Vmess 2 IP</div>
+                  <div class="server-price-value">Rp 15.000/bulan</div>
+                </div>
+              </div>
+              
+              <div class="text-center mt-3">
+                <a href="https://wa.me/6281214726068?text=Halo%20Admin,%20saya%20ingin%20beli%20server%20Indonesia" class="btn btn-primary">
+                  <i class="fas fa-comments"></i> Chat Admin
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="server-card">
+            <div class="server-card-header">
+              <i class="fas fa-flag"></i> Server Singapura
+            </div>
+            <div class="server-card-body">
+              <div class="server-options">
+                <div class="server-option">
+                  <div class="server-option-title">Pilih Jenis Server:</div>
+                  <div class="server-option-buttons">
+                    <div class="server-option-btn" data-server="singapura" data-type="ssh">SSH</div>
+                    <div class="server-option-btn" data-server="singapura" data-type="vmess">Vmess</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="server-prices" id="singapura-prices" style="display: none;">
+                <div class="server-price-item">
+                  <div class="server-price-name">SSH 1 IP</div>
+                  <div class="server-price-value">Rp 8.000/bulan</div>
+                </div>
+                <div class="server-price-item">
+                  <div class="server-price-name">SSH 2 IP</div>
+                  <div class="server-price-value">Rp 10.000/bulan</div>
+                </div>
+                <div class="server-price-item">
+                  <div class="server-price-name">Vmess 1 IP</div>
+                  <div class="server-price-value">Rp 10.000/bulan</div>
+                </div>
+                <div class="server-price-item">
+                  <div class="server-price-name">Vmess 2 IP</div>
+                  <div class="server-price-value">Rp 12.000/bulan</div>
+                </div>
+              </div>
+              
+              <div class="text-center mt-3">
+                <a href="https://wa.me/6281214726068?text=Halo%20Admin,%20saya%20ingin%20beli%20server%20Singapura" class="btn btn-primary">
+                  <i class="fas fa-comments"></i> Chat Admin
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Masa Aktif -->
+    <section id="aktif" class="mt-5">
+      <div class="section-header">
+        <h2>📆 Paket Masa Aktif</h2>
+        <p>Perpanjang masa aktif kartu Anda dengan harga terjangkau</p>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Provider</th>
+                  <th>Masa Aktif</th>
+                  <th>Harga</th>
+                  <th>Keterangan</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="fas fa-sim-card text-primary"></i> XL</td>
+                  <td>1 Tahun</td>
+                  <td>Rp 10.000</td>
+                  <td>masuk perbulan / perpanjang otomatis</td>
+                  <td>
+                    <a href="https://wa.me/6281214726068?text=Halo%20Admin,%20saya%20ingin%20beli%20XL%201%20tahun%2010.000%20" class="btn btn-sm btn-success">
+                      <i class="fas fa-shopping-cart"></i> Beli
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-sim-card text-primary"></i> XL</td>
+                  <td>45 Hari</td>
+                  <td>Rp 5.000</td>
+                  <td>Otomatis Masuk</td>
+                  <td>
+                    <a href="https://wa.me/6281214726068?text=Halo%20Admin,%20saya%20ingin%20beli%20XL%2045%20Hari%205000" class="btn btn-sm btn-success">
+                      <i class="fas fa-shopping-cart"></i> Beli
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-sim-card text-danger"></i> AXIS</td>
+                  <td>1 Bulan</td>
+                  <td>Rp 7.500</td>
+                  <td>Resmi, langsung masuk</td>
+                  <td>
+                    <a href="https://wa.me/6281214726068?text=Halo%20Admin,%20saya%20ingin%20beli%20AXIS%201%20Bulan" class="btn btn-sm btn-success">
+                      <i class="fas fa-shopping-cart"></i> Beli
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-sim-card text-warning"></i> INDOSAT</td>
+                  <td>1 Bulan</td>
+                  <td>Rp 10.000</td>
+                  <td>Resmi, langsung masuk</td>
+                  <td>
+                    <a href="https://wa.me/6281214726068?text=Halo%20Admin,%20saya%20ingin%20beli%20INDOSAT%201%20Bulan" class="btn btn-sm btn-success">
+                      <i class="fas fa-shopping-cart"></i> Beli
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="fas fa-sim-card text-danger"></i> TELKOMSEL</td>
+                  <td>1 Bulan</td>
+                  <td>Rp 15.000</td>
+                  <td>Resmi, langsung masuk</td>
+                  <td>
+                    <a href="https://wa.me/6281214726068?text=Halo%20Admin,%20saya%20ingin%20beli%20TELKOMSEL%201%20Bulan" class="btn btn-sm btn-success">
+                      <i class="fas fa-shopping-cart"></i> Beli
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="text-center mt-3">
+            <a href="https://wa.me/6281214726068" class="btn btn-primary">
+              <i class="fas fa-comments"></i> Chat Admin untuk Lebih Lanjut
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADIJAYA PEDIA Card -->
+    <section class="mt-5">
+      <div class="section-header">
+        <h2>🚀 Butuh Suntik Sosial Media?</h2>
+        <p>Kunjungi ADIJAYA PEDIA untuk layanan sosial media terpercaya</p>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h4 class="card-title">ADIJAYA PEDIA - Suntik Sosial Media</h4>
+              <p class="card-text">
+                <i class="fas fa-check-circle text-success"></i> Layanan suntik sosial media aman dan terpercaya<br>
+                <i class="fas fa-check-circle text-success"></i> Tersedia untuk semua platform: TikTok, Instagram, Facebook, WhatsApp, Shopee<br>
+                <i class="fas fa-check-circle text-success"></i> Harga terjangkau dengan hasil maksimal
+              </p>
+              <div class="d-grid gap-2 mt-3">
+                <a href="sosmed.html" class="btn btn-primary">
+                  <i class="fas fa-external-link-alt"></i> Kunjungi ADIJAYA PEDIA
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4 text-center">
+              <img src="logo.png" alt="ADIJAYA PEDIA" class="img-fluid" style="max-height: 120px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Keunggulan ADIJAYA VPN</h2>
+        <p>Mengapa memilih ADIJAYA VPN untuk kebutuhan internet Anda</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-3 col-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Cepat & Stabil</h3>
+            <p>Koneksi internet super cepat dan stabil untuk semua kebutuhan Anda</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Aman & Terpercaya</h3>
+            <p>Enkripsi tingkat tinggi untuk melindungi data dan privasi Anda</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>Server Global</h3>
+            <p>Akses ke server di berbagai negara untuk membuka blokir</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Support 24/7</h3>
+            <p>Tim support siap membantu Anda kapan saja dibutuhkan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimoni" class="mt-5">
+    <div class="container">
+      <div class="section-header">
+        <h2>Apa Kata Mereka</h2>
+        <p>Testimoni dari pelanggan yang puas dengan layanan kami</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "Pelayanan sangat memuaskan! Kuota VPN cepat masuk dan konfigurasi mudah digunakan. Harga juga sangat terjangkau."
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">A</div>
+              <div class="testimonial-info">
+                <h4>Andi Pratama</h4>
+                <p>Pelanggan sejak 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "Saya sudah menggunakan layanan ADIJAYA VPN selama 6 bulan dan sangat puas. Koneksi stabil dan admin responsif."
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">S</div>
+              <div class="testimonial-info">
+                <h4>Siti Nurhaliza</h4>
+                <p>Pelanggan setia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "Paket XL Unli Bizz Lite sangat membantu untuk kebutuhan kerja saya sehari-hari. Recommended!"
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">B</div>
+              <div class="testimonial-info">
+                <h4>Budi Santoso</h4>
+                <p>Profesional</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="mt-5">
+    <div class="container">
+      <div class="section-header">
+        <h2>Pertanyaan Umum</h2>
+        <p>Jawaban untuk pertanyaan yang sering diajukan</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="faq-item">
+            <div class="faq-question">
+              Bagaimana cara membeli paket VPN?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Anda dapat membeli paket VPN dengan menghubungi admin kami melalui WhatsApp. Pilih paket yang Anda inginkan, lalu klik tombol "Order" untuk langsung terhubung dengan admin.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Apakah kuota VPN bisa digunakan di semua daerah?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Sebagian besar paket kami support semua daerah (ALL TKP), kecuali untuk beberapa paket tertentu seperti TSEL ILMUPEDIA yang hanya support Jateng & Jatim.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Berapa lama proses aktivasi paket?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Proses aktivasi biasanya sangat cepat, hanya membutuhkan waktu beberapa menit setelah pembayaran dikonfirmasi.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="faq-item">
+            <div class="faq-question">
+              Apakah ada garansi untuk paket yang dibeli?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Untuk paket resmi dari provider, ada garansi sesuai dengan kebijakan provider masing-masing. Untuk paket unlimited unofficial, tidak ada garansi.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Aplikasi VPN apa yang direkomendasikan?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Kami merekomendasikan aplikasi HTTP Custom untuk sebagian besar paket kami. Namun, kami juga menyediakan konfigurasi untuk aplikasi VPN lain seperti V2box & Npv Tunnel (untuk iphone), Dark Tunnel, Armod, Netmod, E-V2ray, V2rayNG, HTTP Injector dan lainnya.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Bagaimana cara menghubungi admin jika ada kendala?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Anda dapat menghubungi admin kami melalui WhatsApp di nomor 6281214726068. Tim support kami siap membantu Anda 24 jam.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Tentang Kami</h3>
+          <p>ADIJAYA VPN adalah penyedia layanan VPN terpercaya di Indonesia sejak 2020. Kami menyediakan berbagai paket VPN dengan harga terjangkau dan kualitas terbaik.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Layanan</h3>
+          <ul>
+            <li><a href="#kuota">Kuota VPN</a></li>
+            <li><a href="#konfig">Konfig & Inject</a></li>
+            <li><a href="#server">Server Konfig</a></li>
+            <li><a href="#aktif">Paket Masa Aktif</a></li>
+            <li><a href="#unli">XL Unli Bizz</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Informasi</h3>
+          <ul>
+            <li><a href="#testimoni">Testimoni</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Kebijakan Privasi</a></li>
+            <li><a href="#">Syarat & Ketentuan</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Kontak Kami</h3>
+          <ul>
+            <li><i class="fab fa-whatsapp"></i> WhatsApp: +62 812-1472-6068</li>
+            <li><i class="fas fa-envelope"></i> Email: info@adijayavpn.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ADIJAYA STORE VPN | All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6281214726068" class="floating-wa" target="_blank" title="Chat Admin">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop" title="Kembali ke Atas">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Hide loading screen when page is loaded
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('loadingScreen').classList.add('hidden');
+      }, 1000);
+    });
+
+    // Theme Toggle
+    const toggleBtn = document.getElementById('toggleTheme');
+    const htmlTag = document.documentElement;
+    
+    toggleBtn.addEventListener('click', () => {
+      if (htmlTag.getAttribute('data-bs-theme') === 'light') {
+        htmlTag.setAttribute('data-bs-theme', 'dark');
+        toggleBtn.textContent = "☀️";
+      } else {
+        htmlTag.setAttribute('data-bs-theme', 'light');
+        toggleBtn.textContent = "🌙";
+      }
+    });
+
+    // Notification Popup Animation
+    const names = ['Aril', 'Budi', 'Siti', 'Fatimah', 'Rizki', 'Dewi', 'Agus', 'Maya', 'Eko', 'Nina', 'Fajar', 'Lestari', 'Hendra', 'Rina', 'Deni', 'Wati', 'Joko', 'Sari', 'Ahmad', 'Yuni'];
+    const products = [
+      'paket bizz lite',
+      'paket edukasi',
+      'paket video conference',
+      'konfig XL Edukasi',
+      'konfig AXIS Edukasi',
+      'konfig IM3 APPS FUN',
+      'konfig XL BIZZ',
+      'konfig XL TURBO TIKTOK',
+      'konfig XL TURBO Double YT',
+      'konfig XL CONFERENCE',
+      'konfig TSEL ILMUPEDIA',
+      'paket masa aktif XL 1 Bulan',
+      'paket masa aktif AXIS 1 Bulan',
+      'paket masa aktif INDOSAT 1 Bulan',
+      'paket masa aktif TELKOMSEL 1 Bulan',
+      'server SSH Indonesia',
+      'server Vmess Indonesia',
+      'server SSH Singapura',
+      'server Vmess Singapura'
+    ];
+
+    function showNotification() {
+      const randomName = names[Math.floor(Math.random() * names.length)];
+      const randomProduct = products[Math.floor(Math.random() * products.length)];
+      
+      document.getElementById('notificationMessage').textContent = `👤 ${randomName} sedang membeli ${randomProduct}`;
+      
+      const notification = document.getElementById('notificationPopup');
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 4000);
+    }
+
+    // Show notification every 2 seconds
+    setInterval(showNotification, 2000);
+
+    // Server Selection
+    const serverButtons = document.querySelectorAll('.server-option-btn');
+    
+    serverButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const server = button.getAttribute('data-server');
+        const type = button.getAttribute('data-type');
+        
+        // Remove active class from all buttons in the same server
+        document.querySelectorAll(`[data-server="${server}"]`).forEach(btn => {
+          btn.classList.remove('active');
+        });
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        // Show prices for the selected server and type
+        const pricesContainer = document.getElementById(`${server}-prices`);
+        pricesContainer.style.display = 'block';
+        
+        // Hide prices for other server
+        const otherServer = server === 'indonesia' ? 'singapura' : 'indonesia';
+        document.getElementById(`${otherServer}-prices`).style.display = 'none';
+      });
+    });
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question.addEventListener('click', () => {
+        // Toggle active class
+        item.classList.toggle('active');
+        
+        // Close other items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item && otherItem.classList.contains('active')) {
+            otherItem.classList.remove('active');
+          }
+        });
+      });
+    });
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
